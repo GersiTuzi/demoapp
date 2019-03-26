@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "ng build",
+    "build": "ng build --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -55,7 +55,7 @@
     "typescript": "~3.2.2"
   },
   "engines": {
-    "node": "~10.15.1",
-    "npm": "~6.4.1"
+    "node": "10.15.1",
+    "npm": "6.4.1"
   }
 }
