@@ -1,0 +1,25 @@
+<div style="text-align:center">
+
+  <div class="container">
+    <h1>Person form </h1>
+    
+    <form>
+      <div class="form-control">
+        <label for="name">PersonId</label>
+        <input type="text" class="form-control" id="id" [(ngModel)]="person.id" name = "id" >
+        <label for="name">Last Name</label>
+        <input type="text" class="form-control" id="LastName" [(ngModel)]="person.lastName" name = "lastname">
+        <label for="name">First Name</label>
+        <input type="text" class="form-control" id="FirstName" [(ngModel)]="person.firstName" name = "firstname">
+        <label for="name">Address</label>
+        <input type="text" class="form-control" id="Address" [(ngModel)]="person.address" name = "address">
+        <label for="name">City</label>
+        <input type="text" class="form-control" id="City" [(ngModel)]="person.city" name = "city">
+      </div>
+ 
+ 
+      <button (click)="sendPerson()" type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+    <button (click)="getPerson()"> click moi </button>
+</div>
