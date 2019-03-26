@@ -1,16 +1,13 @@
 //Install express server
-const express = require('express');
-const path = require('path');
- 
-const app = express();
- 
-// Serve only the static files form the dist directory
-// Replace the '/dist/<to_your_project_name>'
-app.use(express.static(__dirname + '/dist/timesheet-app'));
- 
-app.get('*', function(req,res) {
-  // Replace the '/dist/<to_your_project_name>/index.html'
-  res.sendFile(path.join(__dirname + '/dist/timesheet-app/index.html'));
-});
-// Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 8080);
+
+const appExpress = require('./server/app_express')
+const http = require('http')
+const apiPort = process.env.PORT || 8080
+
+appExpress.set('port', apiPort)
+
+const server = http.createServer(appExpress)
+
+server.listen(apiPort)
+
+console.log('Server listening on port ' + apiPort)
