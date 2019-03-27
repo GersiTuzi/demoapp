@@ -12,20 +12,11 @@ export class AuthService {
   private loggedStatus = false;
   constructor(private http: HttpClient) { }
 
-  areCredentialsValid(username, password) {
+  async areCredentialsValid(username, password) {
     const params = 'username=' + username + '&password=' + password ;
-
-    this.http.get<boolean>('http://localhost:8080/login?' + params).subscribe(data => this.loggedStatus = data );
-
-    console.log('logged status : ' + this.loggedStatus);
-
+    this.loggedStatus = await this.http.get<boolean>('http://localhost:8080/login?' + params).toPromise();
 
   }
-
-
-  delay(ms: number) {
-    return new Promise( resolve => setTimeout(resolve, ms) );
-}
 
   isLoggedIn(): boolean {
     return this.loggedStatus;

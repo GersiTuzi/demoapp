@@ -1,25 +1,38 @@
-<div style="text-align:center">
+
 
   <div class="container">
     <h1>Person form </h1>
     
     <form>
       <div class="form-control">
-        <label for="name">PersonId</label>
-        <input type="text" class="form-control" id="id" [(ngModel)]="person.id" name = "id" >
-        <label for="name">Last Name</label>
-        <input type="text" class="form-control" id="LastName" [(ngModel)]="person.lastName" name = "lastname">
-        <label for="name">First Name</label>
-        <input type="text" class="form-control" id="FirstName" [(ngModel)]="person.firstName" name = "firstname">
-        <label for="name">Address</label>
-        <input type="text" class="form-control" id="Address" [(ngModel)]="person.address" name = "address">
+
+        <label for="name">PersonId :</label>
+        <mat-form-field>
+          <input matInput id="id" [(ngModel)]="person.id" name = "id">
+        </mat-form-field>
+
+        <label for="name">Last Name :</label>
+        <mat-form-field>
+          <input matInput id="LastName" [(ngModel)]="person.lastName" name = "lastname">
+        </mat-form-field>
+
+        <label for="name">First Name :</label>
+        <mat-form-field>
+          <input matInput id="FirstName" id="firstname" [(ngModel)]="person.firstName" name = "firstname">
+        </mat-form-field>
+
+        <label for="name">Address :</label>
+        <mat-form-field>
+          <input matInput id="Address"id="address" [(ngModel)]="person.address" name = "address">
+        </mat-form-field>
+
         <label for="name">City</label>
-        <input type="text" class="form-control" id="City" [(ngModel)]="person.city" name = "city">
+        <mat-form-field>
+          <input matInput id="Address" id="City" [(ngModel)]="person.city" name = "city">
+        </mat-form-field>
       </div>
- 
- 
-      <button (click)="sendPerson()" type="submit" class="btn btn-success">Submit</button>
+      <button (click)="sendPerson()" class="btn btn-primary" type="submit">Submit</button>
 
     </form>
-    <button (click)="getPerson()"> click moi </button>
+    <button (click)="getPerson()" type="button" class="btn btn-outline-info">Info</button>
 </div>

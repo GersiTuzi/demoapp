@@ -24,11 +24,10 @@ export class LoginComponent implements OnInit {
     const username = target.querySelector('#username').value;
     const password = target.querySelector('#password').value;
 
-    this.Auth.areCredentialsValid(username, password);
-    await this.Auth.delay(300);
+    await this.Auth.areCredentialsValid(username, password);
 
 
-    if (this.Auth.isLoggedIn() === true) {
+    if (await this.Auth.isLoggedIn() === true) {
       this.router.navigate(['home']);
 
     } else {
