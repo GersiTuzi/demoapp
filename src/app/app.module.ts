@@ -6,7 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 // tslint:disable-next-line:max-line-length
-import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule, MatInputModule, MatFormFieldModule, MatSelectModule, MatOptionModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatCardModule, MatFormFieldModule, MatSelectModule, MatOptionModule, MatDialogModule, MatIconModule, MatTableModule, MatSortModule,MatInputModule} from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +15,13 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserComponent } from './add-user/add-user.component';
+import { RoleComponent } from './role/role.component';
+import { AddPopupComponent } from './role/role.component';
+import { RoleViewComponent } from './role-view/role-view.component';
+import { RoleEditComponent } from './role-edit/role-edit.component';
+import { DepartementComponent, AddPopupDepartementComponent } from './departement/departement.component';
+import { DepartementViewComponent } from './departement-view/departement-view.component';
+import { DepartementEditComponent } from './departement-edit/departement-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,16 @@ import { AddUserComponent } from './add-user/add-user.component';
     LoginComponent,
     HomeComponent,
     HeaderComponent,
-    AddUserComponent
+    AddUserComponent,
+    RoleComponent,
+    AddPopupComponent,
+    RoleViewComponent,
+    RoleEditComponent,
+    DepartementComponent,
+    DepartementViewComponent,
+    DepartementEditComponent,
+    AddPopupDepartementComponent
+
   ],
   imports: [
     BrowserModule,
@@ -34,11 +50,15 @@ import { AddUserComponent } from './add-user/add-user.component';
     MatCheckboxModule,
     MatToolbarModule,
     MatCardModule,
-    MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
     MatOptionModule,
+    MatDialogModule,
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatInputModule,
     RouterModule.forRoot([
     {
       path: 'home',
@@ -47,19 +67,30 @@ import { AddUserComponent } from './add-user/add-user.component';
     },
     {
       path: '',
-      component: LoginComponent,
+      component: LoginComponent
 
     },
     {
-      path: 'addUser',
-      component: AddUserComponent,
+      path: 'departement',
+      component: DepartementComponent,
       canActivate: [AuthGuard]
 
+    },
+    {
+      path: 'role',
+      component: RoleComponent,
+      canActivate: [AuthGuard]
+    },
+    {
+      path: 'addUser',
+      component: AddUserComponent
     }
 
     ]),
     BrowserAnimationsModule
   ],
+
+  entryComponents: [AddPopupComponent, RoleViewComponent, RoleEditComponent, AddPopupDepartementComponent ],
   providers: [PersonService, AuthGuard],
   bootstrap: [AppComponent]
 })

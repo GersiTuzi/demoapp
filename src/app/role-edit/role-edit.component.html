@@ -1,0 +1,21 @@
+
+<div class="container">
+  <form>
+  <div class="row">
+    <div class="col-25">
+      <h1>
+          <label >Enter role name</label></h1>
+    </div>
+    <div class="col-75" >
+        <form ngNativeValidate>
+        <input required type="text" [(ngModel)]="data.name" id="name" name="name" placeholder="Role*" />
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel and close</button>
+            <button mat-button (click)="save()" >Save</button>
+            <button mat-button (click)="saveAndClose($event)">Save and close</button>
+          </mat-dialog-actions>
+        </form>
+      </div>
+  </div>
+  </form>
+</div>

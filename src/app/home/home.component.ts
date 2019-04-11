@@ -1,6 +1,6 @@
 import { PersonService } from './../services/person.service';
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../person.model';
+import { Person } from '../models/person.model';
 
 
 @Component({
@@ -10,15 +10,9 @@ import { Person } from '../person.model';
 })
 export class HomeComponent implements OnInit {
 
-  person: Person = {
-    id: 0,
-    lastName: '',
-    firstName: '',
-    address: '',
-    city: ''
-  };
+  person: Person;
   title = 'timesheet-app';
-  persons$: Person [] ;
+  persons$: Person ;
   constructor(private svc: PersonService) {
 
   }

@@ -1,0 +1,22 @@
+
+<h2>Add new role</h2>
+
+<div class="container">
+  <form>
+  <div class="row">
+    <div class="col-25">
+      <label >Enter role name<span style="color:red;">*</span></label>
+    </div>
+    <div class="col-75">
+        <form ngNativeValidate>
+        <input required type="text" [(ngModel)]="role.name" id="name" name="name" placeholder="Role*" />
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button mat-button (click)="addRole()">Send</button>
+          </mat-dialog-actions>
+        </form>
+ 
+      </div>
+  </div>
+  </form>
+</div>

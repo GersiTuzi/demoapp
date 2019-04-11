@@ -1,0 +1,14 @@
+table {
+    width: 100%;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .mat-column-name{
+    flex: 0 0 10px;
+}
+  .example-container > * {
+    width: 100%;
+
+  }

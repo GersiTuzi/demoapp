@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, observable } from 'rxjs';
-import { template } from '@angular/core/src/render3';
+
 
 
 @Injectable({
@@ -9,11 +8,11 @@ import { template } from '@angular/core/src/render3';
 })
 export class AuthService {
 
-  private loggedStatus = false;
+  private loggedStatus = true; // Set false in prod
   constructor(private http: HttpClient) { }
 
   async areCredentialsValid(username, password) {
-    const params = 'username=' + username + '&password=' + password ;
+    const params = 'username=' + username + '&password=' + password;
     this.loggedStatus = await this.http.get<boolean>('http://localhost:8080/login?' + params).toPromise();
 
   }

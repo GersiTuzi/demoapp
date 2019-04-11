@@ -1,7 +1,91 @@
 
+<h2>Add new person</h2>
 
-  <div class="container">
-      <h1>New user </h1>
-
+<div class="container">
+  <form (submit)= "submit()">
+  <div class="row">
+    <div class="col-25">
+      <label >First Name<span style="color:red;">*</span></label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="firstname" name="firstname" placeholder="Your name*" required>
+    </div>
   </div>
-  
+
+  <div class="row">
+    <div class="col-25">
+      <label >Last Name <span style="color:red;">*</span></label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lastname" name="lastname" placeholder="Your last name*" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label >Username<span style="color:red;">*</span></label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="username" name="username" placeholder="Enter your username*" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label >Password<span style="color:red;">*</span></label>
+    </div>
+    <div class="col-75">
+      <input type="password" id="password" name="password" placeholder="Enter your password*" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label >Confirm password<span style="color:red;">*</span></label>
+    </div>
+    <div class="col-75">
+      <input type="password" id="confirmPass" name="confirmPass" placeholder="Validate your password*" required>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label >Birthday</label>
+    </div>
+    <div class="col-75">
+      <input type="date" id="dateOfBirth" name="dateOfBirth" placeholder="Enter your date of birth">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label >Email</label>
+    </div>
+    <div class="col-75">
+      <input type="email" id="email" name="email" placeholder="Enter your email">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label >Phone number</label>
+    </div>
+    <div class="col-75">
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-25">
+      <label >Adress</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="adress" name="adress" placeholder="Enter your adress">
+    </div>
+  </div>
+
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form>
+</div>

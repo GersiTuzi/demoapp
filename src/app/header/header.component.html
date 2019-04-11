@@ -1,4 +1,14 @@
-<p *ngIf="isLogged()">
-  <button mat-raised-button color="primary" routerLink="" (click)="logout()" >Logout</button>
-  <button mat-raised-button color="secondary" routerLink="addUser" >Add user</button>
-</p>
+<nav>
+  <div class="div1">
+
+    <p *ngIf="isLogged()">
+      <button mat-raised-button color="primary" routerLink="" (click)="logout()">Logout</button>
+      <button mat-raised-button color="secondary" routerLink="addUser">User</button>
+      <button mat-raised-button color="secondary" routerLink="role">Role</button>
+      <button mat-raised-button color="secondary" routerLink="departement">Departement</button>
+      <button mat-raised-button color="home" routerLink="home">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+      </button>
+    </p>
+  </div>
+</nav>
